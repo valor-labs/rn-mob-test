@@ -1,9 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Container, Text, H1, H3, Input, Item, Button } from 'native-base';
-import { loginStyle } from './Login.style';
+import { loginStyle } from './login.style';
+import { AuthRoutes } from '../../common/constants/routes';
 
-function LoginScreen() {
+function LoginScreen({ navigation }: any) {
     return (
         <Container style={loginStyle.wrapper}>
             <View style={loginStyle.logo}>
@@ -21,7 +22,7 @@ function LoginScreen() {
                         keyboardType='email-address'
                     />
                 </Item>
-                <Button block dark style={loginStyle.button}>
+                <Button block dark style={loginStyle.button} onPress={() => navigation.navigate(AuthRoutes.List)}>
                     <Text>Continue</Text>
                 </Button>
             </View>
