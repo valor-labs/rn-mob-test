@@ -36,6 +36,8 @@ target 'RnMobTest' do
 
   pod 'boost-for-react-native', :podspec => 'https://raw.githubusercontent.com/react-native-community/boost-for-react-native/master/boost-for-react-native.podspec'
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'RnMobTestTests' do
     inherit! :search_paths
     # Pods for testing
