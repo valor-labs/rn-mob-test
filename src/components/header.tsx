@@ -2,17 +2,23 @@ import React from 'react';
 
 import { Left, Button, Icon, Title, Body, Right, Header } from 'native-base';
 
-interface IProps {
-    goBack: Function;
-}
+type IProps = {
+    goBack?: Function;
+    transparent?: boolean;
+};
 
 export function MyHeader(props: IProps) {
+    const { goBack, transparent } = props;
     return (
-        <Header style={{ backgroundColor: '#D8D9DB' }}>
+        <Header transparent={transparent} style={{ backgroundColor: transparent ? 'transparent' : '#D8D9DB' }}>
             <Left>
-                <Button transparent onPress={() => props.goBack()}>
-                    <Icon name='arrow-back' />
-                </Button>
+                {!goBack ? (
+                    <></>
+                ) : (
+                    <Button transparent onPress={() => goBack()}>
+                        <Icon name='arrow-back' />
+                    </Button>
+                )}
             </Left>
             <Body>
                 <Title>Header</Title>
