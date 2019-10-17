@@ -10,18 +10,22 @@ type IProps = {
 export function MyHeader(props: IProps) {
     const { goBack, transparent } = props;
     return (
-        <Header transparent={transparent} style={{ backgroundColor: transparent ? 'transparent' : '#D8D9DB' }}>
+        <Header
+            transparent={transparent}
+            style={{ backgroundColor: transparent ? 'transparent' : '#D8D9DB' }}
+            androidStatusBarColor='#D8D9DB'
+        >
             <Left>
                 {!goBack ? (
                     <></>
                 ) : (
                     <Button transparent onPress={() => goBack()}>
-                        <Icon name='arrow-back' />
+                        <Icon style={{ color: 'black' }} ios='arrowleft' android='arrowleft' name='arrowleft' color='red' type='AntDesign' />
                     </Button>
                 )}
             </Left>
             <Body>
-                <Title>Header</Title>
+                <Title style={{ color: 'black' }}>Header</Title>
             </Body>
             <Right />
         </Header>
