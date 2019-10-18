@@ -2,8 +2,10 @@ import React from 'react';
 import { List, Item, Input, Label } from 'native-base';
 import { Dropdown } from 'react-native-material-dropdown';
 import { ScrollView } from 'react-native';
+import { DatePicker } from '../../components/date-picker';
 
-export function FromMeForm() {
+// tslint:disable-next-line: no-any
+export function FromMeForm({ navigation }: any) {
     const data = [
         {
             value: 'Male',
@@ -41,12 +43,22 @@ export function FromMeForm() {
                     <Label>Agency</Label>
                     <Input />
                 </Item>
-                <Item floatingLabel style={{ marginBottom: 21 }}>
+                <Item floatingLabel>
                     <Label>Reason for Visit</Label>
                     <Input />
                 </Item>
-                <Dropdown label='Gender' data={data} style={{ marginBottom: 21 }} />
-                <Dropdown label='Locally recruited' data={data2} style={{ marginBottom: 21 }} />
+                <Dropdown label='Gender' data={data} />
+                <Dropdown label='Contract type' data={data2} />
+                <DatePicker
+                    placeholder='Arrival date'
+                    style={{ marginTop: 21 }}
+                    openModal={() => navigation.navigate('Modal')}
+                />
+                <DatePicker
+                    placeholder='Departure date'
+                    style={{ marginTop: 21 }}
+                    openModal={() => navigation.navigate('Modal')}
+                />
             </List>
         </ScrollView>
     );

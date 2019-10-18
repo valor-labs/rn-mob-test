@@ -25,7 +25,7 @@ export function Forms({ navigation }: any) {
                     activeTextStyle={{ color: 'black' }}
                     textStyle={{ color: 'black' }}
                 >
-                    <FromMeForm />
+                    <FromMeForm navigation={navigation} />
                 </Tab>
                 <Tab
                     heading='For guest'
@@ -34,7 +34,7 @@ export function Forms({ navigation }: any) {
                     activeTextStyle={{ color: 'black' }}
                     textStyle={{ color: 'black' }}
                 >
-                    <FromMeForm />
+                    <FromMeForm navigation={navigation} />
                 </Tab>
             </Tabs>
             <Footer
