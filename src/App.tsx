@@ -7,20 +7,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { fadeIn } from 'react-navigation-transitions';
 
-const MainStack = createStackNavigator(
+const FormStack = createStackNavigator(
     {
-        [AuthRoutes.Login]: LoginScreen,
-        [AuthRoutes.List]: ListScreen,
-        [AuthRoutes.Form]: Forms,
-    },
-    {
-        headerMode: 'none',
-    }
-);
-
-const RootStack = createStackNavigator(
-    {
-        Main: MainStack,
+        Main: Forms,
         Modal: { screen: CalendarModal },
     },
     {
@@ -28,6 +17,17 @@ const RootStack = createStackNavigator(
         headerMode: 'none',
         transparentCard: true,
         transitionConfig: () => fadeIn(),
+    }
+);
+
+const RootStack = createStackNavigator(
+    {
+        [AuthRoutes.Login]: LoginScreen,
+        [AuthRoutes.List]: ListScreen,
+        [AuthRoutes.Form]: Forms,
+    },
+    {
+        headerMode: 'none',
     }
 );
 
