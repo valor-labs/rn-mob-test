@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Modal, TouchableOpacity, SafeAreaView, Platform } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Platform } from 'react-native';
 import { Icon } from 'native-base';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -16,12 +16,14 @@ export function DatePicker(props: Props) {
     const [currDate, setCurrDate] = useState();
     return (
         <TouchableOpacity
+            activeOpacity={1}
             style={[{ borderBottomColor: '#9EA5AD', borderBottomWidth: 1 }, style]}
             onPress={() => {
                 setShowPicker(!showPicker);
                 setCurrDate(new Date());
             }}
         >
+            {currDate && <Text style={{ fontSize: 12, lineHeight: 16, color: 'grey' }}>{placeholder}</Text>}
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={{ marginBottom: 8, fontSize: 16, lineHeight: 24, color: !currDate ? 'grey' : 'black' }}>
                     {!currDate ? placeholder : currDate.toLocaleDateString('en-US')}
