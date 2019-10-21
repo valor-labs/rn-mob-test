@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Item, Input, Label, Button, Text, View, Icon } from 'native-base';
 import { Dropdown } from 'react-native-material-dropdown';
-import { ScrollView, KeyboardAvoidingView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { DatePicker } from '../../components/date-picker';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { Container, Text, H1, H3, Input, Item, Button } from 'native-base';
 import { loginStyle } from './login.style';
-import { AuthRoutes } from '../../common/constants/routes';
+import { TestRoutes } from '../../common/constants/routes';
 
 function LoginScreen({ navigation }: any) {
     return (
@@ -22,7 +22,7 @@ function LoginScreen({ navigation }: any) {
                         keyboardType='email-address'
                     />
                 </Item>
-                <Button block dark style={loginStyle.button} onPress={() => navigation.navigate(AuthRoutes.List)}>
+                <Button block dark style={loginStyle.button} onPress={() => navigation.navigate(TestRoutes.List)}>
                     <Text>Continue</Text>
                 </Button>
             </View>
