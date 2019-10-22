@@ -39,16 +39,13 @@ export function Forms({ navigation }: any) {
             </Tabs>
             <Footer
                 style={{
-                    borderColor: 'transparent', // Required to show shadows on Android for some reason !?!?
+                    borderColor: 'transparent',
+                    backgroundColor: '#0000',
                     shadowColor: '#000',
-                    shadowOffset: {
-                        width: 0,
-                        height: 0,
-                    },
+                    shadowOffset: { width: 0, height: 7 },
                     shadowOpacity: 0.3,
-                    shadowRadius: 5,
-                    backgroundColor: 'white',
-                    elevation: 15,
+                    shadowRadius: 4,
+                    elevation: 1,
                     minHeight: 70,
                 }}
             >

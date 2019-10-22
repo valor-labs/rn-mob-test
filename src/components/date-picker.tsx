@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Icon } from 'native-base';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 
 type Props = {
     placeholder: string;
     style?: { marginTop: number };
-    openModal: Function;
 };
 
 export function DatePicker(props: Props) {
@@ -20,7 +19,9 @@ export function DatePicker(props: Props) {
             style={[{ borderBottomColor: '#9EA5AD', borderBottomWidth: 1 }, style]}
             onPress={() => {
                 setShowPicker(!showPicker);
-                setCurrDate(new Date());
+                if (!currDate) {
+                    setCurrDate(new Date());
+                }
             }}
         >
             {currDate && <Text style={{ fontSize: 12, lineHeight: 16, color: 'grey' }}>{placeholder}</Text>}
@@ -34,25 +35,23 @@ export function DatePicker(props: Props) {
                     android='calendar'
                     type='AntDesign'
                     style={{ fontSize: 24, color: 'grey' }}
-                ></Icon>
-            </View>
-            {showPicker ? (
-                <DateTimePicker
-                    value={currDate || new Date()}
-                    mode='date'
-                    is24Hour={true}
-                    display='calendar'
-                    // tslint:disable-next-line: no-any
-                    onChange={(_, date: any) => {
-                        date && setCurrDate(date);
-                        if (Platform.OS !== 'ios') {
-                            setShowPicker(false);
-                        }
-                    }}
                 />
-            ) : (
-                <></>
-            )}
+            </View>
+            <DateTimePicker
+                isVisible={showPicker}
+                onConfirm={handleDatePicked}
+                onCancel={hideDateTimePicker}
+                date={currDate}
+            />
         </TouchableOpacity>
     );
+
+    function handleDatePicked(date: Date) {
+        setCurrDate(date);
+        hideDateTimePicker();
+    }
+
+    function hideDateTimePicker() {
+        setShowPicker(false);
+    }
 }

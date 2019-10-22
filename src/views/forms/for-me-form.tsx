@@ -5,8 +5,7 @@ import { ScrollView } from 'react-native';
 import { DatePicker } from '../../components/date-picker';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-// tslint:disable-next-line: no-any
-export function FromMeForm({ navigation }: any) {
+export function FromMeForm() {
     const data = [
         {
             value: 'Male',
@@ -51,16 +50,8 @@ export function FromMeForm({ navigation }: any) {
                     </Item>
                     <Dropdown label='Gender' data={data} />
                     <Dropdown label='Contract type' data={data2} />
-                    <DatePicker
-                        placeholder='Arrival date'
-                        style={{ marginTop: 21 }}
-                        openModal={() => navigation.navigate('Modal')}
-                    />
-                    <DatePicker
-                        placeholder='Departure date'
-                        style={{ marginTop: 21 }}
-                        openModal={() => navigation.navigate('Modal')}
-                    />
+                    <DatePicker placeholder='Arrival date' style={{ marginTop: 21 }} />
+                    <DatePicker placeholder='Departure date' style={{ marginTop: 21 }} />
                     <Item floatingLabel style={{ marginBottom: 21, marginTop: 10 }}>
                         <Label>Additional remarks</Label>
                         <Input />
@@ -72,7 +63,7 @@ export function FromMeForm({ navigation }: any) {
                                 ios='attachment'
                                 android='attachment'
                                 type='MaterialCommunityIcons'
-                            ></Icon>
+                            />
                             <Text style={{ textAlign: 'center' }}>Attach flight tickets</Text>
                         </View>
                     </Button>
