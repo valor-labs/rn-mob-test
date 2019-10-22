@@ -12,7 +12,7 @@ export function Detail({ navigation }: any) {
     return (
         <View style={{ flex: 1 }}>
             <MyHeader goBack={navigation.pop} />
-            <ScrollView style={{ flex: 1, marginBottom: 70 }}>
+            <ScrollView style={{ flex: 1 }}>
                 <View style={{ height: 239, zIndex: -1 }}>
                     <Swiper showsButtons={false} height={239}>
                         <View style={styles.slide1}>

@@ -1,21 +1,23 @@
 import { View } from 'native-base';
 import React from 'react';
+import { Platform } from 'react-native';
 
 // tslint:disable-next-line: no-any
 export function Footer({ children }: any) {
     return (
         <View
             style={{
-                backgroundColor: 'white',
-                shadowColor: 'black',
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                // elevation: 2,
+                backgroundColor: Platform.OS === 'android' ? 'transparent' : 'white',
                 height: 70,
                 width: '100%',
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
+                elevation: 2,
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: 0.5 * 2 },
+                shadowOpacity: 0.3,
+                shadowRadius: 4,
             }}
         >
             {children}

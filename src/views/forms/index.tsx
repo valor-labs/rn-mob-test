@@ -28,6 +28,7 @@ const FormTabs = createMaterialTopTabNavigator(
                 backgroundColor: '#D8D9DB',
                 elevation: 0,
                 shadowOpacity: 0,
+                borderBottomWidth: 0,
             },
             headerTintColor: 'black',
         }),

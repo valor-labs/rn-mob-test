@@ -1,11 +1,10 @@
 import React from 'react';
-import { List, Item, Input, Label, Text, View, Icon } from 'native-base';
 import { Dropdown } from 'react-native-material-dropdown';
 import { ScrollView } from 'react-native';
 import { DatePicker } from '../../components/date-picker';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Footer } from '../../components/footer';
-import { Button } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 
 export function FromMeForm() {
     const data = [
@@ -26,51 +25,54 @@ export function FromMeForm() {
         <>
             <ScrollView style={{ flex: 1 }} contentContainerStyle={{ alignItems: 'center' }}>
                 <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
-                    <List>
-                        <Item floatingLabel style={{ marginBottom: 21 }}>
-                            <Label>Name</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel style={{ marginBottom: 21 }}>
-                            <Label>Surname</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel style={{ marginBottom: 21 }}>
-                            <Label>Email</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel style={{ marginBottom: 21 }}>
-                            <Label>Phone number</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel style={{ marginBottom: 21 }}>
-                            <Label>Agency</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel>
-                            <Label>Reason for Visit</Label>
-                            <Input />
-                        </Item>
-                        <Dropdown label='Gender' data={data} />
-                        <Dropdown label='Contract type' data={data2} />
-                        <DatePicker placeholder='Arrival date' style={{ marginTop: 21 }} />
-                        <DatePicker placeholder='Departure date' style={{ marginTop: 21 }} />
-                        <Item floatingLabel style={{ marginBottom: 21, marginTop: 10 }}>
-                            <Label>Additional remarks</Label>
-                            <Input />
-                        </Item>
-                        <Button bordered dark block style={{ width: 328, height: 40, marginBottom: 21 }}>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <Icon
-                                    name='attachment'
-                                    ios='attachment'
-                                    android='attachment'
-                                    type='MaterialCommunityIcons'
-                                />
-                                <Text style={{ textAlign: 'center' }}>Attach flight tickets</Text>
-                            </View>
-                        </Button>
-                    </List>
+                    <TextInput
+                        label='Name'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <TextInput
+                        label='Surname'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <TextInput
+                        label='Email'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <TextInput
+                        label='Phone number'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <TextInput
+                        label='Agency'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <TextInput
+                        label='Reason for Visit'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <Dropdown label='Gender' data={data} />
+                    <Dropdown label='Contract type' data={data2} />
+                    <DatePicker placeholder='Arrival date' style={{ marginTop: 21 }} />
+                    <DatePicker placeholder='Departure date' style={{ marginTop: 21 }} />
+                    <TextInput
+                        label='Additional remarks'
+                        theme={{ colors: { primary: 'black' } }}
+                        style={{ marginBottom: 21, backgroundColor: 'white' }}
+                    />
+                    <Button
+                        icon='camera'
+                        mode='outlined'
+                        color='black'
+                        style={{ width: 328, marginBottom: 21 }}
+                        onPress={() => console.log('Hello')}
+                    >
+                        Attach flight tickets
+                    </Button>
                 </KeyboardAwareScrollView>
             </ScrollView>
             <Footer>
