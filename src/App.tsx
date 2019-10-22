@@ -1,4 +1,4 @@
-import LoginScreen from './views/login/login';
+import { LoginScreen } from './views/login/login';
 import { ListScreen } from './views/list/list';
 import { TestRoutes } from './common/constants/routes';
 import { Forms } from './views/forms/forms';

@@ -4,7 +4,7 @@ import { Container, Text, H1, H3, Input, Item, Button } from 'native-base';
 import { loginStyle } from './login.style';
 import { TestRoutes } from '../../common/constants/routes';
 
-function LoginScreen({ navigation }: any) {
+export function LoginScreen({ navigation }: any) {
     return (
         <Container style={loginStyle.wrapper}>
             <View style={loginStyle.logo}>
