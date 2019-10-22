@@ -1,6 +1,5 @@
-import { View } from 'native-base';
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 
 // tslint:disable-next-line: no-any
 export function Footer({ children }: any) {
