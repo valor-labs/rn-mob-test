@@ -25,7 +25,7 @@ export function DatePicker(props: Props) {
             }}
         >
             {currDate && <Text style={{ fontSize: 12, lineHeight: 16, color: 'grey' }}>{placeholder}</Text>}
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 30, alignItems: 'center' }}>
                 <Text style={{ marginBottom: 8, fontSize: 16, lineHeight: 24, color: !currDate ? 'grey' : 'black' }}>
                     {!currDate ? placeholder : currDate.toLocaleDateString('en-US')}
                 </Text>
