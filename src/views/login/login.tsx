@@ -1,32 +1,35 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Container, Text, H1, H3, Input, Item, Button } from 'native-base';
 import { loginStyle } from './login.style';
 import { TestRoutes } from '../../common/constants/routes';
+import { Button, Title, Headline, TextInput } from 'react-native-paper';
 
 export function LoginScreen({ navigation }: any) {
     return (
-        <Container style={loginStyle.wrapper}>
+        <View style={loginStyle.wrapper}>
             <View style={loginStyle.logo}>
-                <H1>Logo</H1>
+                <Headline>Logo</Headline>
             </View>
-            <View>
-                <H3>Login</H3>
-            </View>
+            <Title>Login</Title>
             <View style={loginStyle.loginWrapper}>
-                <Item regular style={loginStyle.inputContainer}>
-                    <Input
-                        placeholder='Email'
-                        style={loginStyle.inputStyle}
-                        autoCompleteType='email'
-                        keyboardType='email-address'
-                    />
-                </Item>
-                <Button block dark style={loginStyle.button} onPress={() => navigation.navigate(TestRoutes.List)}>
-                    <Text>Continue</Text>
+                <TextInput
+                    mode='outlined'
+                    placeholder='Email'
+                    style={loginStyle.inputStyle}
+                    theme={{ colors: { primary: 'black' } }}
+                    autoCompleteType='email'
+                    keyboardType='email-address'
+                ></TextInput>
+                <Button
+                    color='black'
+                    mode='contained'
+                    style={loginStyle.button}
+                    onPress={() => navigation.navigate(TestRoutes.List)}
+                >
+                    Continue
                 </Button>
             </View>
-        </Container>
+        </View>
     );
 }
 

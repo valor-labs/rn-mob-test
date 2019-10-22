@@ -1,33 +1,16 @@
 import React from 'react';
-
-import { Left, Button, Icon, Title, Body, Right, Header } from 'native-base';
+import { Appbar } from 'react-native-paper';
 
 type IProps = {
     goBack?: Function;
-    transparent?: boolean;
 };
 
 export function MyHeader(props: IProps) {
-    const { goBack, transparent } = props;
+    const { goBack } = props;
     return (
-        <Header
-            transparent={transparent}
-            style={{ backgroundColor: transparent ? 'transparent' : '#D8D9DB' }}
-            androidStatusBarColor='#D8D9DB'
-        >
-            <Left>
-                {!goBack ? (
-                    <></>
-                ) : (
-                    <Button transparent onPress={() => goBack()}>
-                        <Icon style={{ color: 'black' }} ios='arrowleft' android='arrowleft' name='arrowleft' color='red' type='AntDesign' />
-                    </Button>
-                )}
-            </Left>
-            <Body>
-                <Title style={{ color: 'black' }}>Header</Title>
-            </Body>
-            <Right />
-        </Header>
+        <Appbar.Header theme={{ colors: { primary: '#D8D9DB' } }} style={{ elevation: 1 }}>
+            <Appbar.BackAction onPress={() => goBack && goBack()} color='black' />
+            <Appbar.Content title='Header' color='black' />
+        </Appbar.Header>
     );
 }

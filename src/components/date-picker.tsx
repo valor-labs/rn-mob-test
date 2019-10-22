@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Icon } from 'native-base';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import { IconButton } from 'react-native-paper';
 
 type Props = {
     placeholder: string;
@@ -29,13 +29,7 @@ export function DatePicker(props: Props) {
                 <Text style={{ marginBottom: 8, fontSize: 16, lineHeight: 24, color: !currDate ? 'grey' : 'black' }}>
                     {!currDate ? placeholder : currDate.toLocaleDateString('en-US')}
                 </Text>
-                <Icon
-                    name='calendar'
-                    ios='calendar'
-                    android='calendar'
-                    type='AntDesign'
-                    style={{ fontSize: 24, color: 'grey' }}
-                />
+                <IconButton icon='calendar' color='grey' size={24} />
             </View>
             <DateTimePicker
                 isVisible={showPicker}
