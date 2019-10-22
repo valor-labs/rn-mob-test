@@ -24,7 +24,7 @@ export function LoginScreen({ navigation }: any) {
                     color='black'
                     mode='contained'
                     style={loginStyle.button}
-                    onPress={() => navigation.navigate(TestRoutes.List)}
+                    onPress={() => navigation.navigate(TestRoutes.BookService)}
                 >
                     Continue
                 </Button>

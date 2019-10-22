@@ -3,7 +3,7 @@ import { Line } from '../../components/line';
 import { TestRoutes } from '../../common/constants/routes';
 import Swiper from 'react-native-swiper';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { MyHeader } from '../../components/header';
+import { WFPHeader } from '../../components/wfp-header';
 import { Text, Title, Headline, Button } from 'react-native-paper';
 import { Footer } from '../../components/footer';
 
@@ -11,7 +11,7 @@ import { Footer } from '../../components/footer';
 export function Detail({ navigation }: any) {
     return (
         <View style={{ flex: 1 }}>
-            <MyHeader goBack={navigation.pop} />
+            <WFPHeader title='' goBack={navigation.pop} />
             <ScrollView style={{ flex: 1 }}>
                 <View style={{ height: 239, zIndex: -1 }}>
                     <Swiper showsButtons={false} height={239}>
