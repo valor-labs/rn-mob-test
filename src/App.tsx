@@ -11,7 +11,7 @@ import CountryListStack from './views/country-list';
 
 const RootStack = createStackNavigator({
     // [TestRoutes.Login]: {
-    //     screen: CountryFilterView,
+    //     screen: TextSearch,
     //     navigationOptions: ({ navigation }) => ({
     //         title: 'Book guesthouse',
     //         headerLeft: <Close onPress={navigation.goBack} />,

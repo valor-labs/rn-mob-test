@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { isClearAvailableReducer } from './is-clear-available.reducer';
+import { searchRequestReducer } from './search-request.reducer';
 
 export interface IState {
-    isClearAvailable: boolean;
+    searchRequest: string;
 }
 
 const rootReducer = combineReducers<IState>({
-    isClearAvailable: isClearAvailableReducer,
+    searchRequest: searchRequestReducer,
 });
 
 export default rootReducer;

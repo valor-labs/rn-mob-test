@@ -3,7 +3,12 @@ import { View, TextInput, FlatList } from 'react-native';
 import { Text } from 'react-native-paper';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export function CountryFilterView() {
+type Props = {
+    searchValue: string;
+    updateSearchValue: Function;
+};
+export function TextSearch(props: Props) {
+    const { searchValue, updateSearchValue } = props;
     return (
         <>
             <View style={{ height: 100, backgroundColor: '#D8D9DB' }}>
@@ -12,6 +17,8 @@ export function CountryFilterView() {
                     placeholder='Select Country'
                     placeholderTextColor='black'
                     style={{ height: 123, paddingLeft: 22, fontSize: 20 }}
+                    value={searchValue}
+                    onChangeText={(text: string) => updateSearchValue(text)}
                 />
             </View>
             <FlatList
