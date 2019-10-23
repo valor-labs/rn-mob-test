@@ -10,6 +10,5 @@ export enum TestRoutes {
 export enum ListRoutes {
     List = 'List',
     Location = 'Location',
-    Cites = 'Cites',
-    City = 'City',
+    Agency = 'Agency',
 }

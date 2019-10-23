@@ -22,7 +22,7 @@ export function ListScreen({ navigation }: any) {
                 }}
             >
                 <DropDownFilter title='Choose city' onPress={goToCityFilter} />
-                <DropDownFilter title='Choose agency' />
+                <DropDownFilter title='Choose agency' onPress={goToAgencyFilter} />
             </View>
 
             <View style={{ padding: 16 }}>
@@ -40,5 +40,8 @@ export function ListScreen({ navigation }: any) {
 
     function goToCityFilter() {
         navigation.navigate(ListRoutes.Location, { type: 'city' });
+    }
+    function goToAgencyFilter() {
+        navigation.navigate(ListRoutes.Agency, { type: 'agency' });
     }
 }

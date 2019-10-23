@@ -5,12 +5,27 @@ import { Close } from '../../components/close';
 import * as React from 'react';
 import ClearButton from '../../components/clear-button';
 import TextSearch from '../filters/text-search';
+import AgencySearch from '../filters/agency-search';
 
 const CityListStack = createStackNavigator(
     {
         [ListRoutes.List]: { screen: ListScreen, navigationOptions: { header: null } },
         [ListRoutes.Location]: {
             screen: TextSearch,
+            navigationOptions: ({ navigation }) => ({
+                headerLeft: <Close onPress={navigation.goBack} />,
+                headerRight: <ClearButton />,
+                headerStyle: {
+                    backgroundColor: '#D8D9DB',
+                    elevation: 0,
+                    shadowOpacity: 0,
+                    borderBottomWidth: 0,
+                },
+                headerTintColor: 'black',
+            }),
+        },
+        [ListRoutes.Agency]: {
+            screen: AgencySearch,
             navigationOptions: ({ navigation }) => ({
                 headerLeft: <Close onPress={navigation.goBack} />,
                 headerRight: <ClearButton />,
