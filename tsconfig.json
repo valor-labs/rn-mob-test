@@ -6,6 +6,8 @@
       "skipLibCheck": true,
       "lib": [
         "es6",
+
+        "dom"
       ],  /* Specify library files to be included in the compilation. */
       "allowJs": true, /* Allow javascript files to be compiled. */
       // "checkJs": true,                       /* Report errors in .js files. */
@@ -65,4 +67,3 @@
         "jest.config.js"
       ]
   }
-  
