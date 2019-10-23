@@ -1,12 +1,12 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { ListRoutes } from '../../common/constants/routes';
-import { ListScreen } from './country-list';
+import { ListScreen } from './city-list';
 import { Close } from '../../components/close';
 import * as React from 'react';
 import ClearButton from '../../components/clear-button';
 import TextSearch from '../filters/text-search';
 
-const CountryListStack = createStackNavigator(
+const CityListStack = createStackNavigator(
     {
         [ListRoutes.List]: { screen: ListScreen, navigationOptions: { header: null } },
         [ListRoutes.Location]: {
@@ -29,4 +29,4 @@ const CountryListStack = createStackNavigator(
     }
 );
 
-export default CountryListStack;
+export default CityListStack;

@@ -13,7 +13,7 @@ export function LocationDropDown(props: Props) {
     const { title, icon, onPress } = props;
     return (
         <TouchableOpacity
-            onPress={onPress}
+            onPress={() => onPress()}
             style={{
                 flexDirection: 'row',
                 alignItems: 'center',

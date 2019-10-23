@@ -4,9 +4,12 @@ export enum TestRoutes {
     CountryList = 'CountryList',
     Form = 'Form',
     Detail = 'Detail',
+    CityList = 'CityList',
 }
 
-export enum CountryListRoutes {
+export enum ListRoutes {
     List = 'List',
-    Location = 'Location'
+    Location = 'Location',
+    Cites = 'Cites',
+    City = 'City',
 }

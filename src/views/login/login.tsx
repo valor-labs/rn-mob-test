@@ -19,7 +19,7 @@ export function LoginScreen({ navigation }: any) {
                     theme={{ colors: { primary: 'black' } }}
                     autoCompleteType='email'
                     keyboardType='email-address'
-                ></TextInput>
+                />
                 <Button
                     color='black'
                     mode='contained'

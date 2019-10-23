@@ -6,15 +6,18 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 type Props = {
     searchValue: string;
     updateSearchValue: Function;
+    // tslint:disable-next-line:no-any
+    navigation: any;
 };
 export function TextSearch(props: Props) {
-    const { searchValue, updateSearchValue } = props;
+    const { searchValue, updateSearchValue, navigation } = props;
+    const type: string = navigation.getParam('type');
     return (
         <>
             <View style={{ height: 100, backgroundColor: '#D8D9DB' }}>
                 <TextInput
                     autoFocus
-                    placeholder='Select Country'
+                    placeholder={`Select ${type}`}
                     placeholderTextColor='black'
                     style={{ height: 123, paddingLeft: 22, fontSize: 20 }}
                     value={searchValue}
@@ -23,8 +26,8 @@ export function TextSearch(props: Props) {
             </View>
             <FlatList
                 data={['Afghanistan', 'Algeria', 'Bangladesh', 'Benin']}
-                renderItem={({ item }) => (
-                    <TouchableOpacity>
+                renderItem={({ item, index }) => (
+                    <TouchableOpacity key={index}>
                         <Text style={{ fontSize: 16, padding: 16 }}>{item}</Text>
                     </TouchableOpacity>
                 )}
