@@ -9,6 +9,7 @@ import FormTabs from './views/forms';
 import { BookService } from './views/book-service/book-service-view';
 import CountryListStack from './views/country-list';
 import CityListStack from './views/city-list';
+import { AccommodationList } from './views/accomodation-list/accommodation-list';
 
 const RootStack = createStackNavigator({
     // [TestRoutes.Login]: {
@@ -30,6 +31,7 @@ const RootStack = createStackNavigator({
     [TestRoutes.CountryList]: { screen: CountryListStack, navigationOptions: { header: null } },
     [TestRoutes.CityList]: { screen: CityListStack, navigationOptions: { header: null } },
     [TestRoutes.Detail]: { screen: Detail, navigationOptions: { header: null } },
+    [TestRoutes.AccommodationList]: { screen: AccommodationList, navigationOptions: { header: null } },
     [TestRoutes.Form]: FormTabs,
 });
 

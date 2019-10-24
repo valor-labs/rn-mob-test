@@ -17,7 +17,7 @@ export function WFPCard(props: Props) {
         <TouchableOpacity onPress={() => onPress && onPress()}>
             <View
                 style={{
-                    width: 350,
+                    width: '100%',
                     height: 127,
                     marginBottom: 16,
                     padding: 15,

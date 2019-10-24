@@ -12,12 +12,12 @@ export function ListScreen({ navigation }: any) {
     return (
         <View style={{ flex: 1, paddingBottom: 160 }}>
             <WFPHeader title={title} goBack={navigation.pop} />
-            <View style={{ padding: 16 }}>
+            <View style={{ padding: 16, width: '100%' }}>
                 <LocationDropDown title='Location' icon='map-marker' onPress={handelPress} />
                 <FlatList
                     contentContainerStyle={{
                         marginTop: 15,
-                        alignItems: 'center',
+                        width: '100%'
                     }}
                     data={[1, 2, 3, 4, 5]}
                     renderItem={({ index }) => (

@@ -4,7 +4,7 @@ import { WFPHeader } from '../../components/wfp-header';
 import { View, FlatList } from 'react-native';
 import { WFPCard } from '../../components/wfp-card/wfp-card';
 import { DropDownFilter } from '../../components/dropdown-filter/dropdown-filter';
-import { ListRoutes } from '../../common/constants/routes';
+import { ListRoutes, TestRoutes } from '../../common/constants/routes';
 
 // tslint:disable-next-line: no-any
 export function ListScreen({ navigation }: any) {
@@ -29,10 +29,17 @@ export function ListScreen({ navigation }: any) {
                 <FlatList
                     contentContainerStyle={{
                         marginTop: 15,
-                        alignItems: 'center',
                     }}
                     data={[1, 2, 3]}
-                    renderItem={({ index }) => <WFPCard title='Kabul' flag agencies={[1, 2]} key={index} />}
+                    renderItem={({ index }) => (
+                        <WFPCard
+                            title='Kabul'
+                            flag
+                            agencies={[1, 2]}
+                            key={index}
+                            onPress={() => handlePress(`Kabul, ${title}`)}
+                        />
+                    )}
                 />
             </View>
         </View>
@@ -43,5 +50,8 @@ export function ListScreen({ navigation }: any) {
     }
     function goToAgencyFilter() {
         navigation.navigate(ListRoutes.Agency, { type: 'agency' });
+    }
+    function handlePress(_title: string) {
+        navigation.navigate(TestRoutes.AccommodationList, { title: _title });
     }
 }

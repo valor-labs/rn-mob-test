@@ -3,21 +3,22 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import SvgUri from 'react-native-svg-uri';
 
-export function MyBadge() {
+export function BadgeWithName() {
     return (
         <View
             style={{
                 flexDirection: 'row',
                 height: 32,
-                width: 97,
+                maxWidth: 97,
                 borderWidth: 2,
                 borderColor: 'rgba(158, 150, 150, 0.5)',
                 borderRadius: 6,
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'space-around',
             }}
         >
-            <Text style={{ fontWeight: '500', fontSize: 14, lineHeight: 16, color: 'grey' }}>UNICEF</Text>
+            <SvgUri width='23' height='23' source={require('../assets/logo-who-agency.svg')} />
+            <Text style={{ fontWeight: '500', fontSize: 14, lineHeight: 16, color: 'grey' }}>WHO</Text>
         </View>
     );
 }

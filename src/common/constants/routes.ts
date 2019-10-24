@@ -5,6 +5,7 @@ export enum TestRoutes {
     Form = 'Form',
     Detail = 'Detail',
     CityList = 'CityList',
+    AccommodationList = 'AccommodationList',
 }
 
 export enum ListRoutes {
